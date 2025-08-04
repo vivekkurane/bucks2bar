@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucks2Bar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- chart.js link -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Bucks2Bar</h1>
+    </header>
+
+    <div class="container my-4">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="bucks2barTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button"
+                    role="tab" aria-controls="data" aria-selected="true">Data</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart" type="button"
+                    role="tab" aria-controls="chart" aria-selected="false">Chart</button>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content p-3 border border-top-0" id="bucks2barTabsContent">
+            <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="data-tab">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <!-- January -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">January</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="january-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="january-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- February -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">February</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="february-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="february-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- March -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">March</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="march-income" placeholder="Income"
+                                            min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="march-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- April -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">April</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="april-income" placeholder="Income"
+                                            min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="april-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- May -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">May</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="may-income" placeholder="Income"
+                                            min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="may-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- June -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">June</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="june-income" placeholder="Income"
+                                            min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="june-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <!-- July -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">July</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="july-income" placeholder="Income"
+                                            min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="july-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- August -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">August</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="august-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="august-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- September -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">September</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="september-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="september-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- October -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">October</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="october-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="october-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- November -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">November</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="november-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="november-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- December -->
+                        <div class="p-3 border bg-light mb-3">
+                            <label class="form-label">December</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Income</span>
+                                        <input type="number" class="form-control income-input" id="december-income"
+                                            placeholder="Income" min="0" step="any">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-text">Expenses</span>
+                                        <input type="number" class="form-control expense-input" id="december-expenses"
+                                            placeholder="Expenses" min="0" step="any">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+            <div class="row">
+                <div class="col-12">
+                    <canvas id="barChart" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="bg-primary text-white text-center py-3 mt-4 shadow-sm">
+    <p class="mb-0">&copy; <span id="copyright-year"></span> Bucks2Bar. All rights reserved.</p>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
